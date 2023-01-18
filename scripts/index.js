@@ -8,11 +8,7 @@ const state = {
   
   // console.log(taskModel);
   
-  // getElementById(), getElemByClass(), getElemByTagName()
-  //      >> these r used when we want to process thes user data from html in js
-  
-  // querySelector()
-  //      >> these r used from js to insert any kind of html txt which would be reflected on the UI
+
   
   // to create a card on home pg
   const htmlTaskContent = ({ id, title, description, type, url }) => `
@@ -73,7 +69,7 @@ const state = {
   </div>`;
   };
   
-  // here we will be updating our local storage (i.e., the modals/cards which we see on our ui)
+  // here we will be updating our local storage
   
   const updateLocalStorage = () => {
     localStorage.setItem(
@@ -84,7 +80,7 @@ const state = {
     );
   };
   
-  // to get data or card or modals on ur ui from local storage (Browsers storage)
+  // to get data or card or modals on ur ui from local storage
   const loadInitialData = () => {
     const localStorageCopy = JSON.parse(localStorage.task);
   
@@ -126,7 +122,7 @@ const state = {
     // pop up the current one
     if (!e) e = window.event;
   
-    // find the crt card opened
+    
     const getTask = state.taskList.find(({ id }) => id === e.target.id);
     taskModal.innerHTML = htmlModalContent(getTask);
     // console.log(getTask);
@@ -140,7 +136,7 @@ const state = {
     // console.log(targetID);
   
     const type = e.target.tagName;
-    // console.log(type)
+   
   
     const removeTask = state.taskList.filter(({ id }) => id !== targetID);
     // console.log(removeTask);
